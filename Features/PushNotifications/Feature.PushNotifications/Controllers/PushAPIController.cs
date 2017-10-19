@@ -64,6 +64,7 @@ namespace Feature.PushNotifications.Controllers
 
         #region Script Rendering Validation Methods
 
+        private const string GOAL_TEMPLATE_ID = "{475E9026-333F-432D-A4DC-52E03B75CB6B}";
         private const string ENGAGEMENT_STATE_ID = "{8CE2707A-3742-4A89-933B-065E5BE02BC9}";
         private const string ENGAGEMENT_PLAN_ID = "{6E5B63D6-2401-4A52-8B4D-CFEF5E4E9752}";
 
@@ -93,8 +94,10 @@ namespace Feature.PushNotifications.Controllers
         }
         private bool IsGoal(string _id)
         {
-            return false;
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(_id))
+                return false;
+            var item = Sitecore.Context.Database.GetItem(new ID(_id));
+            return item.TemplateID.ToString() == GOAL_TEMPLATE_ID;
         }
 
         #endregion
