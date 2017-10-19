@@ -1,0 +1,143 @@
+----item----
+version: 1
+id: {2A0A83DA-634B-4959-A1F8-9AC2F9C0F949}
+database: master
+path: /sitecore/media library/Push Notifications/Icons/icons8-Nasa-48
+parent: {43A78664-606D-44FF-8756-1FB2BF95E4EB}
+name: icons8-Nasa-48
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1828A2C-7E5D-4BBD-98CA-320474871548}
+templatekey: Image
+created: 20170901T153501Z
+
+----field----
+field: {40E50ED9-BA07-4702-992E-A912738D32DC}
+name: Blob
+key: blob
+content-length: 2742
+
+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
+RU5ErkJggg==
+----field----
+field: {22EAC599-F13B-4607-A89D-C091763A467D}
+name: Width
+key: width
+content-length: 2
+
+48
+----field----
+field: {DE2CA9E4-C117-4C8A-A139-1FF4B199D15A}
+name: Height
+key: height
+content-length: 2
+
+48
+----field----
+field: {C06867FE-9A43-4C7D-B739-48780492D06F}
+name: Extension
+key: extension
+content-length: 3
+
+png
+----field----
+field: {6F47A0A5-9C94-4B48-ABEB-42D38DEF6054}
+name: Mime Type
+key: mime type
+content-length: 9
+
+image/png
+----field----
+field: {6954B7C7-2487-423F-8600-436CB3B6DC0E}
+name: Size
+key: size
+content-length: 4
+
+2002
+----field----
+field: {CB09946F-3218-4823-87D2-D5007C199A96}
+name: Dimensions
+key: dimensions
+content-length: 7
+
+48 x 48
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 61
+
+-/media/2A0A83DA634B4959A1F89AC2F9C0F949.ashx?h=16&thn=1&w=16
+----version----
+language: en
+version: 1
+revision: ee48f741-f377-4f16-9212-55021b7c3db7
+
+----field----
+field: {65885C44-8FCD-4A7F-94F1-EE63703FE193}
+name: Alt
+key: alt
+content-length: 4
+
+Nasa
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170901T153501Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ee48f741-f377-4f16-9212-55021b7c3db7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170901T153501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

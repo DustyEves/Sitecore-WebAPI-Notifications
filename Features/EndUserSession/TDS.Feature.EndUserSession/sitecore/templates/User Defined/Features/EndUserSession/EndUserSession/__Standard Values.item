@@ -1,0 +1,80 @@
+----item----
+version: 1
+id: {E4157142-2BEF-435A-A619-649A97005A18}
+database: master
+path: /sitecore/templates/User Defined/Features/EndUserSession/EndUserSession/__Standard Values
+parent: {6005714A-E69E-4977-8E81-8942635F23F8}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {6005714A-E69E-4977-8E81-8942635F23F8}
+templatekey: EndUserSession
+created: 20160803T180401:636058442410730000
+
+----version----
+language: en
+version: 1
+revision: b7ea56fd-7b17-470a-af68-1771f3557513
+
+----field----
+field: {DE00A996-42E9-49DC-809A-96D56841BAEB}
+name: EndUserSessionMessage
+key: endusersessionmessage
+content-length: 115
+
+By reaching this page your current visitor session has ended, and your data will be flushed into xDB for reporting.
+----field----
+field: {55A80586-47BE-4F64-A619-72747D1F8E71}
+name: EndUserSessionUrl
+key: endusersessionurl
+content-length: 121
+
+<link text="Check the Latest Sitecore News" linktype="external" url="https://twitter.com/Sitecore" anchor="" target="" />
+----field----
+field: {EFEFF65A-16BA-47E3-891C-0F6D493E0F81}
+name: EndUserSessionTitle
+key: endusersessiontitle
+content-length: 21
+
+Ends the User Session
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160803T180401Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b7ea56fd-7b17-470a-af68-1771f3557513
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160803T180755Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {C992996A-F1F9-44EB-BD89-F08DF0DFA24A}
+database: master
+path: /sitecore/system/Settings/Analytics/Engagement Automation/Predefined items/Actions/Send Notification
+parent: {745CBAD6-FEFE-4F29-A686-6080FEA87341}
+name: Send Notification
+master: {00000000-0000-0000-0000-000000000000}
+template: {8C5EAD00-5F68-4310-AB0C-84F283B5EE0A}
+templatekey: Engagement Automation Action
+created: 20170921T192011Z
+
+----field----
+field: {A291A22B-99E2-46BB-A27B-8EC744275396}
+name: Type
+key: type
+content-length: 83
+
+Feature.PushNotifications.Actions.SendNotificationAction, Feature.PushNotifications
+----field----
+field: {1507131D-CEE3-49E9-AF32-DE5403A37B49}
+name: Parameters
+key: parameters
+content-length: 35
+
+Title=&Body=&Icon=&Badge=&Subject=&
+----field----
+field: {8728A037-47D3-4180-B754-87926EDA7AE8}
+name: Editor
+key: editor
+content-length: 87
+
+/sitecore/shell/~/xaml/Feature.PushNotifications.sitecore.shell.SendNotificationMessage
+----version----
+language: en
+version: 1
+revision: 5797abe1-9ecf-4f6a-8126-309faca443e9
+
+----field----
+field: {06F2D72A-1924-4B9A-BA1E-186CE4E57EFD}
+name: Description
+key: description
+content-length: 28
+
+Send a Web Push Notification
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170921T192011Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5797abe1-9ecf-4f6a-8126-309faca443e9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170927T204839Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

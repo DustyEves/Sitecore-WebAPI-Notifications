@@ -1,0 +1,134 @@
+----item----
+version: 1
+id: {BD91C72B-6C96-4CA7-9A75-85950A2F12BF}
+database: master
+path: /sitecore/media library/Push Notifications/Icons/icons8-RGB Lamp-48
+parent: {43A78664-606D-44FF-8756-1FB2BF95E4EB}
+name: icons8-RGB Lamp-48
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1828A2C-7E5D-4BBD-98CA-320474871548}
+templatekey: Image
+created: 20170901T153501Z
+
+----field----
+field: {40E50ED9-BA07-4702-992E-A912738D32DC}
+name: Blob
+key: blob
+content-length: 2068
+
+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
+----field----
+field: {22EAC599-F13B-4607-A89D-C091763A467D}
+name: Width
+key: width
+content-length: 2
+
+48
+----field----
+field: {DE2CA9E4-C117-4C8A-A139-1FF4B199D15A}
+name: Height
+key: height
+content-length: 2
+
+48
+----field----
+field: {C06867FE-9A43-4C7D-B739-48780492D06F}
+name: Extension
+key: extension
+content-length: 3
+
+png
+----field----
+field: {6F47A0A5-9C94-4B48-ABEB-42D38DEF6054}
+name: Mime Type
+key: mime type
+content-length: 9
+
+image/png
+----field----
+field: {6954B7C7-2487-423F-8600-436CB3B6DC0E}
+name: Size
+key: size
+content-length: 4
+
+1512
+----field----
+field: {CB09946F-3218-4823-87D2-D5007C199A96}
+name: Dimensions
+key: dimensions
+content-length: 7
+
+48 x 48
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 61
+
+-/media/BD91C72B6C964CA79A7585950A2F12BF.ashx?h=16&thn=1&w=16
+----version----
+language: en
+version: 1
+revision: a1d07b6e-ba9d-4012-85f6-4fd6887f67ca
+
+----field----
+field: {65885C44-8FCD-4A7F-94F1-EE63703FE193}
+name: Alt
+key: alt
+content-length: 4
+
+Lamp
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170901T153501Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a1d07b6e-ba9d-4012-85f6-4fd6887f67ca
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170901T153502Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

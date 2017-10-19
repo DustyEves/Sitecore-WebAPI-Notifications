@@ -1,0 +1,71 @@
+﻿@using Sitecore.Mvc
+@using Glass.Mapper.Sc.Web.Mvc
+@using DTO = Feature.EndUserSession.DataTransferObjects
+@using Feature.EndUserSession.Models.ViewModels
+
+@inherits GlassView<Feature.EndUserSession.Models.ViewModels.EndUserSessionViewModel>
+
+<!-- Start Features-EndUserSession -->
+<div class="Features-EndUserSession">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>@Editable(Model.ContextItem, m=> m.EndUserSessionTitle)</h2>
+            </div>
+        </div>
+        <div class="row row-image">
+            <div class="col-sm-4">
+                @RenderImage(Model.ContextItem, m => m.EndUserSessionImage, isEditable: true, outputHeightWidth:true)
+            </div>
+            <div class="col-sm-8">
+                @Editable(Model.ContextItem, m=> m.EndUserSessionMessage)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Contact ID</td>
+                                <td>@Model.ContactID</td>
+                                <td>&nbsp;</td>
+                                <td>Identifer</td>
+                                <td>@Model.ContactIdentifier</td>
+                            </tr>
+                            <tr>
+                                <td>First Name</td>
+                                <td>@Model.ContactFirstName</td>
+                                <td>&nbsp;</td>
+                                <td>Last Name</td>
+                                <td>@Model.ContactLastName</td>
+                            </tr>
+                            <tr>
+                                <td>Authentication Lvl</td>
+                                <td>@Model.AuthenticationLvl</td>
+                                <td>&nbsp;</td>
+                                <td>Contact Level</td>
+                                <td>@Model.ContactLvl</td>
+                            </tr>
+                            @*<tr>
+                                <td>First Name</td>
+                                <td>@Model.ContactFirstName</td>
+                                <td>&nbsp;</td>
+                                <td>Last Name</td>
+                                <td>@Model.ContactLastName</td>
+                            </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                @RenderLink(Model.ContextItem, m=> m.EndUserSessionUrl, isEditable:true, attributes:new {@class="btn btn-warning" })
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Features-EndUserSession -->
