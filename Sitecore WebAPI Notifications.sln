@@ -21,6 +21,11 @@ Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TDS.PushNotifications", "Fe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPushLib", "Foundation\WebPushLib\WebPushLib.csproj", "{1C03EB33-E25B-4817-B6FC-258E570C7D28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D31FBD6C-CCCB-47E8-81CC-B6D4DB3BC3AF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
