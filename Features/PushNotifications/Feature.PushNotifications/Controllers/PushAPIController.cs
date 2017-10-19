@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using Sitecore.Analytics;
 using Sitecore.Analytics.Automation.Data;
 using Sitecore.Analytics.Automation.MarketingAutomation;
+using Sitecore.Analytics.Data.Items;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using System;
@@ -110,7 +111,7 @@ namespace Feature.PushNotifications.Controllers
 
         
 
-        public ActionResult RecordSubscription(string _pushAuthorization)
+        public ActionResult RecordSubscription(string _pushAuthorization, string _engagementPlan, string _engagementState, string _goal)
         {
             if (!Tracker.IsActive)
                 Tracker.StartTracking();
@@ -129,8 +130,13 @@ namespace Feature.PushNotifications.Controllers
             profileEntry.AuthorizationToken = _auth;
             profileEntry.Endpoint = _endpoint;
 
-            //if (! string.IsNullOrWhiteSpace(_engagementPlan))
-            //EnrollInEngagementPlan(new ID(ENGAGEMENT_PLAN_ID), new ID(ASKED_FOR_UPDATES));
+            if (! string.IsNullOrWhiteSpace(_engagementPlan) && ! string.IsNullOrWhiteSpace(_engagementState))
+                EnrollInEngagementPlan(new ID(_engagementPlan), new ID(_engagementState));
+            if (!string.IsNullOrWhiteSpace(_goal))
+                TriggerGoal(new ID(_goal));
+
+
+            Tracker.Current.CurrentPage.Cancel();
             return Content("");
         }
 
@@ -139,10 +145,22 @@ namespace Feature.PushNotifications.Controllers
         {
             AutomationStateManager manager = Tracker.Current.Session.CreateAutomationStateManager();
             manager.EnrollInEngagementPlan(_plan, _state);
-            
         }
 
-        
+        private void TriggerGoal(ID _goalId)
+        {
+            var goal = Sitecore.Context.Database.GetItem(_goalId);
+            var page = Tracker.Current.Session.Interaction.PreviousPage;
+            var pageEvent = new PageEventItem(goal);
+            var data = page.Register(pageEvent);
+            data.Data = goal["Description"];
+            data.ItemId = goal.ID.Guid;
+            data.DataKey = goal.Paths.Path;
+            Tracker.Current.Interaction.AcceptModifications();
+        }
+
+
+
         public ActionResult SendSubscriptionMessage()
         {
             if (!Tracker.IsActive)

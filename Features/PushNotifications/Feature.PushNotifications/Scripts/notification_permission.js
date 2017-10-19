@@ -20,7 +20,7 @@
     if ('PushManager' in window) {
         console.log('and a push manager')
     }
-    askPermission();
+    
 
 });
 
@@ -73,7 +73,10 @@ function recordSubscription(_pushSubscription) {
         data: {
             scAction: "RecordSubscription",
             scController: "PushAPI",
-            _pushAuthorization: JSON.stringify(_pushSubscription)
+            _pushAuthorization: JSON.stringify(_pushSubscription),
+            _engagementPlan: jQuery('#EngagementPlanId').val(),
+            _engagementState: jQuery('#EngagementPlanState').val(),
+            _goal: jQuery('#GoalTriggerId').val()
         },
         success: function () { console.log('Subscription data pushed to server'); },
         error: function () { console.log('error persisting subscription data to server'); }
