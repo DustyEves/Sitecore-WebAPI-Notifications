@@ -34,8 +34,15 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: c1bef395-5547-4864-b9be-412a89b21d45
+revision: c386f048-b811-4868-895a-d030be758193
 
+----field----
+field: {19A69332-A23E-4E70-8D16-B2640CB24CC8}
+name: Title
+key: title
+content-length: 93
+
+Engagement State -- The state to enroll the visitor in if they grant notification permission.
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -49,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c1bef395-5547-4864-b9be-412a89b21d45
+c386f048-b811-4868-895a-d030be758193
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20171019T162023Z
+20171019T164109Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
