@@ -39,12 +39,65 @@ namespace Feature.PushNotifications.Controllers
             if (context == null)
                 throw new InvalidOperationException("Cannot Invoke method without Sitecore Rendering Context");
 
-            _script.Replace("|EngagementPlanId|", context.Rendering.Parameters["EngagementPlanId"]);
-            _script.Replace("|EngagementStateId|", context.Rendering.Parameters["EngagementStateId"]);
-            _script.Replace("|GoalTriggerId|", context.Rendering.Parameters["GoalTriggerId"]);
+            string planId = context.Rendering.Parameters["EngagementPlanId"];
+            string stateId = context.Rendering.Parameters["EngagementStateId"];
+            string goalId = context.Rendering.Parameters["GoalTriggerId"];
+
+
+            if (IsEngagementPlan(planId) && IsStateOfId(planId, stateId))
+            {
+                _script.Replace("|EngagementPlanId|", planId);
+                _script.Replace("|EngagementStateId|", stateId);
+            }
+            else
+            { 
+                _script.Replace("|EngagementPlanId|", string.Empty);
+                _script.Replace("|EngagementStateId|", string.Empty);
+            }
+            if (IsGoal(goalId))
+                _script.Replace("|GoalTriggerId|", goalId);
+            else
+                _script.Replace("|GoalTriggerId|", string.Empty);
 
             return Content(_script.ToString());
         }
+
+        #region Script Rendering Validation Methods
+
+        private const string ENGAGEMENT_STATE_ID = "{8CE2707A-3742-4A89-933B-065E5BE02BC9}";
+        private const string ENGAGEMENT_PLAN_ID = "{6E5B63D6-2401-4A52-8B4D-CFEF5E4E9752}";
+
+        private bool IsEngagementPlan(string _id)
+        {
+            if (string.IsNullOrWhiteSpace(_id))
+                return false;
+
+            var item = Sitecore.Context.Database.GetItem(new ID(_id));
+
+            ///Engagement plan Template Id
+            return item.TemplateID.ToString() == ENGAGEMENT_PLAN_ID;
+        }
+
+        private bool IsStateOfId(string _planId, string _stateId)
+        {
+            if (string.IsNullOrWhiteSpace(_stateId))
+                return false;
+            var stateItem = Sitecore.Context.Database.GetItem(new ID(_stateId));
+            if (stateItem.TemplateID.ToString() != ENGAGEMENT_STATE_ID)
+                return false;
+            var planItem = Sitecore.Context.Database.GetItem(new ID(_planId));
+
+            return stateItem.ParentID == planItem.ID;
+
+
+        }
+        private bool IsGoal(string _id)
+        {
+            return false;
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         [HttpPost]
         public ActionResult GetPublicKey()
@@ -74,18 +127,19 @@ namespace Feature.PushNotifications.Controllers
             profileEntry.Endpoint = _endpoint;
 
             //if (! string.IsNullOrWhiteSpace(_engagementPlan))
-            EnrollInEngagementPlan(new ID(ENGAGEMENT_PLAN_ID), new ID(ASKED_FOR_UPDATES));
+            //EnrollInEngagementPlan(new ID(ENGAGEMENT_PLAN_ID), new ID(ASKED_FOR_UPDATES));
             return Content("");
         }
 
-        private const string ASKED_FOR_UPDATES = "{5916D3D8-C9C5-4EC6-B0FE-6205F108A39C}";
-        private const string ENGAGEMENT_PLAN_ID = "{EB4187F3-DC59-4DEF-BBFF-8E6DBD3669D9}";
+        
         private void EnrollInEngagementPlan(ID _plan, ID _state)
         {
-            Tracker.Current.Session.Identify(string.Format("extranet\\dusty{0}@dusty.com", DateTime.Now.Hour));
             AutomationStateManager manager = Tracker.Current.Session.CreateAutomationStateManager();
             manager.EnrollInEngagementPlan(_plan, _state);
+            
         }
+
+        
         public ActionResult SendSubscriptionMessage()
         {
             if (!Tracker.IsActive)
