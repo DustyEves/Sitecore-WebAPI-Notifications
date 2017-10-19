@@ -13,6 +13,7 @@ using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -21,14 +22,28 @@ namespace Feature.PushNotifications.Controllers
     public class PushAPIController : Controller
     {
 
-        private string _publicKeyElement = @"
+        private string _NotificationScriptMarkup = @"
 <script type='text/javascript' src='/Scripts/notification_permission.js'></script>
-<input type='hidden' id='PushAPIPublicKey' value='{0}' /> 
+<input type='hidden' id='PushAPIPublicKey' value='|PushAPIPublicKey|' /> 
+<input type='hidden' id='EngagementPlanId' value='|EngagementPlanId|' />
+<input type='hidden' id='EngagementPlanState' value='|EngagementStateId|' />
+<input type='hidden' id='GoalTriggerId' value='|GoalTriggerId|' />
 ";
 
         public ActionResult GetScriptAndKey()
         {
-            return Content(string.Format(_publicKeyElement, KeyProvider.PublicKey));
+            StringBuilder _script = new StringBuilder(_NotificationScriptMarkup);
+            _script.Replace("|PushAPIPublicKey|", KeyProvider.PublicKey);
+
+            var context = Sitecore.Mvc.Presentation.RenderingContext.CurrentOrNull;
+            if (context == null)
+                throw new InvalidOperationException("Cannot Invoke method without Sitecore Rendering Context");
+
+            _script.Replace("|EngagementPlanId|", context.Rendering.Parameters["EngagementPlanId"]);
+            _script.Replace("|EngagementStateId|", context.Rendering.Parameters["EngagementStateId"]);
+            _script.Replace("|GoalTriggerId|", context.Rendering.Parameters["GoalTriggerId"]);
+
+            return Content(_script.ToString());
         }
 
         [HttpPost]
@@ -58,6 +73,7 @@ namespace Feature.PushNotifications.Controllers
             profileEntry.AuthorizationToken = _auth;
             profileEntry.Endpoint = _endpoint;
 
+            //if (! string.IsNullOrWhiteSpace(_engagementPlan))
             EnrollInEngagementPlan(new ID(ENGAGEMENT_PLAN_ID), new ID(ASKED_FOR_UPDATES));
             return Content("");
         }

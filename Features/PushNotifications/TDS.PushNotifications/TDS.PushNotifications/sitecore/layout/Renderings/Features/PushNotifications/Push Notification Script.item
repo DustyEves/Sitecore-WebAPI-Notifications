@@ -21,13 +21,20 @@ PushAPI
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action
 key: controller action
-content-length: 9
+content-length: 15
 
-GetScript
+GetScriptAndKey
+----field----
+field: {13F89250-AD6B-4548-882E-118A12C18094}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{93D23634-CDF5-4E3C-A305-E074C2A5D1C0}
 ----version----
 language: en
 version: 1
-revision: c43cc036-dee4-4014-89e7-a0f3a5c08869
+revision: da8b437f-92e5-487a-a46a-2509e9074c63
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -42,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c43cc036-dee4-4014-89e7-a0f3a5c08869
+da8b437f-92e5-487a-a46a-2509e9074c63
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170822T194306Z
+20171019T162305Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
