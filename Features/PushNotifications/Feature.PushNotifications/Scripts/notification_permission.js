@@ -1,5 +1,7 @@
 ﻿jQuery(document).ready(function () {
 
+    //Debugging the message push
+
     jQuery("#cmdSubmit").click(function () {
         console.log('Sending notification request');
         jQuery.ajax({

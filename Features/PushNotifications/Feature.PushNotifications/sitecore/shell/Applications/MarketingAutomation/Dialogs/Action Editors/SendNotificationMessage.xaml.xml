@@ -22,8 +22,8 @@
 
     <Sitecore.Controls.DialogPage runat="server"
         Icon="Software/32x32/graph_edge_directed.png"
-		Header="Select the Notification"
-		Text="Select the notification to send out to the user." >
+		Header="Send Notification"
+		Text="Create the notification to send out to the user." >
 
       <x:register assembly="Sitecore.Shell.MarketingAutomation" namespace="Sitecore.Shell.Applications.MarketingAutomation.Controls"/>
 
